@@ -99,7 +99,14 @@ Angular Services:
 
 
 Data Models
+User
+Course
+Courses
 
 Feature Components
+login
+logout
+signup
 
 Shared Functionality
+Data Services
