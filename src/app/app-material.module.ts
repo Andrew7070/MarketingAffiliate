@@ -19,52 +19,79 @@ import { MatDividerModule } from "@angular/material/divider";
 import { MatTabsModule } from '@angular/material/tabs';
 
 
+const material = [
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatSelectModule,
+    FlexLayoutModule,
+    MatCardModule,
+    MatPaginatorModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSlideToggleModule,
+    MatExpansionModule,
+    MatMenuModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatCheckboxModule,
+    MatTabsModule
+];
 
 @NgModule({
-    imports: [
-        MatButtonModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatTableModule,
-        MatSelectModule,
-        FlexLayoutModule,
-        MatCardModule,
-        MatPaginatorModule,
-        MatIconModule,
-        MatToolbarModule,
-        MatSlideToggleModule,
-        MatExpansionModule,
-        MatMenuModule,
-        MatDialogModule,
-        MatDividerModule,
-        MatCheckboxModule,
-        MatTabsModule,
-        
-    ],
-    exports: [
-        MatButtonModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatTableModule,
-        MatSelectModule,
-        FlexLayoutModule, 
-        MatCardModule,
-        MatPaginatorModule,
-        MatIconModule,
-        MatToolbarModule,
-        MatSlideToggleModule,
-        MatExpansionModule,
-        MatMenuModule,
-        MatDialogModule,
-        MatDividerModule,
-        MatCheckboxModule,
-        MatTabsModule,
-
-
-    ]
+    imports: [material],
+    exports: [material]
 })
+export class AppMaterialModule { }
 
 
-export class MaterialModule {
+// @NgModule({
+//     imports: [
+//         MatButtonModule,
+//         MatFormFieldModule,
+//         MatInputModule,
+//         MatTableModule,
+//         MatSelectModule,
+//         FlexLayoutModule,
+//         MatCardModule,
+//         MatPaginatorModule,
+//         MatIconModule,
+//         MatToolbarModule,
+//         MatSlideToggleModule,
+//         MatExpansionModule,
+//         MatMenuModule,
+//         MatDialogModule,
+//         MatDividerModule,
+//         MatCheckboxModule,
+//         MatTabsModule,
 
-}
+        
+//     ],
+//     exports: [
+//         MatButtonModule,
+//         MatFormFieldModule,
+//         MatInputModule,
+//         MatTableModule,
+//         MatSelectModule,
+//         FlexLayoutModule, 
+//         MatCardModule,
+//         MatPaginatorModule,
+//         MatIconModule,
+//         MatToolbarModule,
+//         MatSlideToggleModule,
+//         MatExpansionModule,
+//         MatMenuModule,
+//         MatDialogModule,
+//         MatDividerModule,
+//         MatCheckboxModule,
+//         MatTabsModule,
+
+
+//     ]
+// })
+
+
+// export class MaterialModule {
+
+// }
