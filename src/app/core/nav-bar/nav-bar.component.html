@@ -1,0 +1,20 @@
+<ng-container>
+<div fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <span> <button routerLink="/welcome" mat-button routerLinkActive="router-link-active" >Home </button></span>
+    <span>Library</span>
+    <span>Profile</span>
+    <span>Cart</span>
+    <span> <button [routerLink]="['/orders']" mat-button routerLinkActive="router-link-active" >Orders</button></span>
+    <span> <button [routerLink]="['/login']" mat-button routerLinkActive="router-link-active" >Login</button></span>
+    <span> <button routerLink="/signup" mat-button routerLinkActive="router-link-active" >SignUp</button></span>
+    <span> <button routerLink="/fp" mat-button routerLinkActive="router-link-active" >Forgotten Password</button></span>
+</div>
+</ng-container>
+
+<ng-container>
+    <!-- For Collapsed menu -->
+    <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm><mat-icon>menu</mat-icon></button>
+    <mat-menu x-position="before" #menu="matMenu">
+
+    </mat-menu>
+</ng-container>

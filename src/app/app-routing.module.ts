@@ -16,6 +16,8 @@ const routes: Routes = [
   { path: 'orders', loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule) },
   { path: 'order', loadChildren: () => import('./orders/orders.module'). then(m => m.OrdersModule) },
 
+  //{ path: 'nav-bar', loadChildren: () => import('./core/nav-bar/nav-bar.module'). then (m => m.NavBarModule)},
+
   { path: 'welcome', component: WelcomeComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
   { path: '**', redirectTo: 'welcome', pathMatch: 'full' },

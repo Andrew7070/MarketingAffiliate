@@ -64,10 +64,7 @@ Login/Logout feature
 
 
 Domain Security
-Email/Password for initial release?
-Tokens for subsequent updates?
-  HttpInterceptor useful for setting auth header
-  Token issuer options?
+OAuth2
 
 Domain Rules
 Validate login credentials

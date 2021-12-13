@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
-import { JwksValidationHandler, OAuthService } from 'angular-oauth2-oidc';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { OAuthService } from 'angular-oauth2-oidc';
 import { authCodeFlowConfig } from './core/services/sso.config';
+
+import { FormControl } from '@angular/forms';
+import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +11,28 @@ import { authCodeFlowConfig } from './core/services/sso.config';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor (private oauthService:OAuthService){
+  @HostBinding('class') className = '';
+  toggleControl = new FormControl(false);
+
+
+  constructor (private overlay: OverlayContainer, private oauthService:OAuthService){
     this.configureSingleSignOn();
   }
 
+  ngOnInit(): void {
+    this.toggleControl.valueChanges.subscribe((darkMode) => {
+      const darkClassName = 'darkMode';
+      this.className = darkMode ? darkClassName : '';
+      if (darkMode) {
+        this.overlay.getContainerElement().classList.add(darkClassName);
+      } else {
+        this.overlay.getContainerElement().classList.remove(darkClassName);
+      }
+    });
+  }  
+
   configureSingleSignOn(){
     this.oauthService.configure(authCodeFlowConfig);
-    this.oauthService.tokenValidationHandler = new JwksValidationHandler();
     this.oauthService.loadDiscoveryDocumentAndTryLogin();
 
   }
@@ -29,4 +47,7 @@ export class AppComponent {
   }
 
   title = 'marketing-affiliate';
+
+
+
 }

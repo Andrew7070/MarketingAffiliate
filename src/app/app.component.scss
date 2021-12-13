@@ -1,7 +1,55 @@
+
 .navbar {
     justify-content: space-between;
 }
 
-span {
-    padding-right: 1rem;
+////
+
+mat-toolbar {
+    display: flex;
+    align-items: center;
+}
+
+.flex-stretch {
+    flex: 1 0 auto;
+}
+
+.content {
+    //padding: 16px;
+    //min-height: 100vh;
+    min-height: 95vh;
+}
+
+mat-card {
+    max-width: 400px;
+}
+
+.body{
+    display: flex;
+    max-height: 100vh;
+    flex-direction: column;
+}
+
+.body-content{
+    flex:1;
+}
+
+.footer{
+    //margin-top: auto;
+    position: sticky;
+    position: -webkit-sticky; /* For macOS/iOS Safari */
+    bottom: 0; /* Sets the sticky toolbar to be on top */
+    z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+    //background-color:SteelBlue
+    display: flex;
+    flex-direction: row;
+}
+
+
+/*Stick nav-bar to the top*/
+.mat-toolbarZ {
+    position: sticky;
+    position: -webkit-sticky; /* For macOS/iOS Safari */
+    top: 0; /* Sets the sticky toolbar to be on top */
+    z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
 }
