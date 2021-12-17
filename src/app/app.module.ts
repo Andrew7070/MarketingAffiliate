@@ -8,6 +8,7 @@ import { AppMaterialModule } from './app-material.module';
 
 import { HttpClientModule } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
+import { environment as env} from '../environments/environment';
 
 
 

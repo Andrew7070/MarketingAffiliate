@@ -42,6 +42,7 @@ yarn-error.log
 testem.log
 /typings
 /src/app/core/services/sso.secrets.ts
+/src/app/core/services/sso.secrets.json
 
 # System Files
 .DS_Store
