@@ -8,13 +8,16 @@ import { AppMaterialModule } from './app-material.module';
 
 import { HttpClientModule } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
-import { environment as env} from '../environments/environment';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
 
 
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { AddHeaderInterceptor } from './core/services/add-header.interceptor';
+
 
 //import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 
@@ -43,6 +46,7 @@ import { MatListModule } from '@angular/material/list';
   imports: [
     HttpClientModule,
     OAuthModule.forRoot(),
+    
 
     AppRoutingModule,
     BrowserModule,
@@ -58,7 +62,9 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     MatListModule,
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 
