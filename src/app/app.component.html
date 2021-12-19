@@ -30,11 +30,11 @@
 <router-outlet></router-outlet>
 
 <span>
-  <button (click)='login()'>Login</button>
+  <button mat-button color='primary' (click)="auth.loginWithRedirect()">Login</button>
 </span>
 
 <span>
-  <button (click)='logout()'>Logout</button>
+  <button mat-button color='primary' (click)="auth.logout({ returnTo: document.location.origin })">Logout</button>
 </span>
 
 
@@ -45,7 +45,7 @@
 </div>
 
 
-
+<app-user-profile></app-user-profile>
 
 
 

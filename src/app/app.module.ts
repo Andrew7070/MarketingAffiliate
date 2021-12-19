@@ -7,8 +7,10 @@ import { AppMaterialModule } from './app-material.module';
 //import { SharedModule } from './shared/shared.module';
 
 import { HttpClientModule } from '@angular/common/http';
-import { OAuthModule } from 'angular-oauth2-oidc';
-import { environment as env} from '../environments/environment';
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment as env } from '../environments/environment';
+//import { OAuthModule } from 'angular-oauth2-oidc';
+//import { environment as env} from '../environments/environment';
 
 
 
@@ -27,6 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { UserProfileComponent } from './core/services/profile.component';
 
 
 
@@ -37,12 +40,14 @@ import { MatListModule } from '@angular/material/list';
     NavBarComponent,
     FooterComponent,
     NavbarComponent,
+    UserProfileComponent,
     //NavBarComponent,
     //WelcomeComponent
   ],
   imports: [
     HttpClientModule,
-    OAuthModule.forRoot(),
+    AuthModule.forRoot({...env.auth}),
+    //OAuthModule.forRoot(),
 
     AppRoutingModule,
     BrowserModule,

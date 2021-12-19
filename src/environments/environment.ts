@@ -1,12 +1,17 @@
+declare var require: any;
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 //import { domain, clientId } from '../app/core/services/sso.secrets.json';
-//const secret = require('../app/core/services/sso.secrets.json');
+const secret = require('../app/core/services/sso.secrets.json');
 
 export const environment = {
   production: false,
+  auth : {
+    clientId: secret.clientId,
+    domain: secret.domain
+  }
   
 };
 
