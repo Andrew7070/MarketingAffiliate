@@ -84,7 +84,8 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "udemy-affiliate:build"
+            "browserTarget": "udemy-affiliate:build",
+            "proxyConfig": "./src/proxy.conf.json"
           }
         },
         "test": {
