@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app-material.module';
 //import { SharedModule } from './shared/shared.module';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { environment as env} from '../environments/environment';
 
@@ -27,6 +27,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { InterceptorServiceOutgoing } from './core/services/interceptor.service';
 
 
 
@@ -58,7 +59,8 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     MatListModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorServiceOutgoing, multi: true }],
   bootstrap: [AppComponent]
 })
 
